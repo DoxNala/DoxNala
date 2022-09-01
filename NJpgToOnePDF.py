@@ -1,9 +1,7 @@
-import os
+import os, shlex
 import sys
 import glob
-import zipfile
 import subprocess
-import shutil
 import img2pdf
 def convertir():
     os.chdir("datos")
@@ -38,7 +36,7 @@ def password():
         print("Las contraseñas no coinciden")
         password()
 def main():
-    os.system("clear")
+    os.system(shlex.quote("clear"))
     print("1. Convertir imagenes")
     print("2. Crear pdf")
     print("3. Aplicar contraseña")
